@@ -1,0 +1,76 @@
+<div class="d-flex" id="wrapper">
+  <div class="border-right bg-light" id="sidebar-wrapper">
+    <div style="font-weight: bold; font-size: 25px;" class="sidebar-heading">Filters
+      <button style="width: 200px;" class="btn btn-link" type="button" (click)="toggleSidenav()"></button>
+    </div>
+    <div class="list-group list-group-flush" style="width: 80px;">
+      <form class="p-3">
+        <div class="form-group">
+          <label for="endData">End Year</label>
+          <input style="width: 250px;" type="text" class="form-control" id="endData" name="endData" [(ngModel)]="endData">
+        </div>
+        <div class="form-group">
+          <label for="selectedTopic">Topics</label>
+          <select class="form-control" id="selectedTopic" name="selectedTopic" [(ngModel)]="selectedTopic">
+            <option *ngFor="let topic of topics" [value]="topic">{{ topic }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedSector">Sector</label>
+          <select class="form-control" id="selectedSector" name="selectedSector" [(ngModel)]="selectedSector">
+            <option *ngFor="let sector of sectors" [value]="sector">{{ sector }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedRegion">Region</label>
+          <select class="form-control" id="selectedRegion" name="selectedRegion" [(ngModel)]="selectedRegion">
+            <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedPest">PEST</label>
+          <select class="form-control" id="selectedPest" name="selectedPest" [(ngModel)]="selectedPest">
+            <option *ngFor="let pest of pests" [value]="pest">{{ pest }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedSource">Source</label>
+          <select class="form-control" id="selectedSource" name="selectedSource" [(ngModel)]="selectedSource">
+            <option *ngFor="let source of sources" [value]="source">{{ source }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedSwot">SWOT</label>
+          <select class="form-control" id="selectedSwot" name="selectedSwot" [(ngModel)]="selectedSwot">
+            <option *ngFor="let swot of swots" [value]="swot">{{ swot }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectedCountry">Country</label>
+          <select class="form-control" id="selectedCountry" name="selectedCountry" [(ngModel)]="selectedCountry">
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+          </select>
+        </div>
+        <button style="width: 200px;" type="button" class="btn btn-primary btn-block" (click)="applyFilters()" (click)="openSnackBar('Filters Applied Successfully!', 'Close')" aria-label="Show an example snack-bar">Apply Filters</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button style="width: 50px;" class="btn btn-primary" id="menu-toggle" (click)="toggleSidenav()">☰</button>
+      <span style="display: flex; align-items: center; color: black; font-weight: bold; font-size: 20px;" class="navbar-brand mx-auto">
+      
+        <span style="font-family: 'Poppins', sans-serif; font-size: 24px;">Data Vista</span>
+      </span>
+    </nav>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-md-12">
+          <app-chart-component [filteredData]="filteredData"></app-chart-component>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

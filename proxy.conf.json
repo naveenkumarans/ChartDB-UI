@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://angularchart.up.railway.app",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,139 @@
+/* chart-component.component.css */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  padding: 10px;
+  cursor: pointer;
+}
+
+li.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#chart {
+  width: 100%;
+  height: 500px;
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+  width: 150px;
+}
+
+.controls label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.controls select {
+  font-size: 1.2em;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.controls select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5);
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls label, .controls select {
+    margin-bottom: 10px;
+  }
+
+  .chart-type-buttons ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .chart-type-buttons li {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls label, .controls select {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .chart-type-buttons ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .chart-type-buttons li {
+    margin-bottom: 5px;
+    margin-right: 0;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.controls label, .controls select, .chart-type-buttons li {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .controls label, .controls select, .chart-type-buttons li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls label, .controls select, .chart-type-buttons li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .controls label, .controls select, .chart-type-buttons li {
+    font-size: 0.75rem;
+  }
+}
